@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #4b12e9;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.logo,h1 {
+    width: 200px;
+    height: 200
+    px;
+    filter: brightness(0.5) contrast(200%);
+    animation: colorChange .5s infinite alternate linear; 
+}
+
+@keyframes colorChange {
+    0%, 100% {
+        filter: brightness(0.5) contrast(200%);
+    }
+    49%,50% {
+        filter: brightness(2) contrast(100%);
+    }
+}
