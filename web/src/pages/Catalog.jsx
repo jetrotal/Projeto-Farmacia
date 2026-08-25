@@ -1,4 +1,4 @@
-import Icon from '@mdi/react';
+import Icon from '../components/Icon';
 import { mdiChevronRight, mdiChevronDown, mdiChevronLeft } from '@mdi/js';
 import ProductCard from '../components/ProductCard';
 import { MOCK_PRODUCTS } from '../constants/assets';

@@ -1,4 +1,4 @@
-import Icon from '@mdi/react';
+import Icon from '../components/Icon';
 import { mdiEyeOutline, mdiShieldOutline, mdiTruckOutline, mdiHeartOutline } from '@mdi/js';
 import { ASSETS } from '../constants/assets';
 

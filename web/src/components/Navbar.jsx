@@ -1,4 +1,4 @@
-import Icon from '@mdi/react';
+import Icon from './Icon';
 import { mdiMagnify, mdiAccountOutline, mdiCartOutline, mdiPill } from '@mdi/js';
 
 export default function Navbar({ setPage }) {

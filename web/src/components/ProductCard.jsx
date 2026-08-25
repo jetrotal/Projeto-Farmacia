@@ -1,4 +1,4 @@
-import Icon from '@mdi/react';
+import Icon from './Icon';
 import { mdiHeartOutline, mdiStar, mdiCartOutline } from '@mdi/js';
 
 export default function ProductCard({ product }) {

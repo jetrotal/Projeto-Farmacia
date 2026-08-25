@@ -1,4 +1,4 @@
-import Icon from '@mdi/react';
+import Icon from './Icon';
 import { mdiInstagram, mdiFacebook, mdiYoutube, mdiPill } from '@mdi/js';
 
 export default function Footer() {

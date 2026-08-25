@@ -1,4 +1,4 @@
-import Icon from '@mdi/react';
+import Icon from '../components/Icon';
 import { mdiArrowRight, mdiMessageReplyTextOutline, mdiTruckOutline, mdiTagOutline, mdiClockOutline, mdiLockOutline, mdiPill, mdiStarFourPointsOutline, mdiApple, mdiWaterOutline, mdiBabyCarriage, mdiHeartOutline } from '@mdi/js';
 import ProductCard from '../components/ProductCard';
 import { ASSETS, MOCK_PRODUCTS } from '../constants/assets';
