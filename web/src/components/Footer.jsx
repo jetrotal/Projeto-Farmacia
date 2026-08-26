@@ -1,5 +1,7 @@
 import Icon from './Icon';
 import { mdiInstagram, mdiFacebook, mdiYoutube, mdiPill } from '@mdi/js';
+import { ASSETS } from '../constants/assets';
+
 
 export default function Footer() {
   return (
@@ -8,7 +10,7 @@ export default function Footer() {
         <div className="brand-col">
           <div className="brand-logo-footer">
             <div className="mascot-square-footer">
-               <Icon path={mdiPill} size={2} color="#FFFFFF" />
+               <img src={ASSETS.mascotHero} style={{ width: '60px', translate: '5px -4px'  }}></img>
             </div>
             <span className="brand-text-footer">FARMARCIA</span>
           </div>

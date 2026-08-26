@@ -16,8 +16,8 @@ export default function Navbar({ setPage }) {
 
       <div className="main-nav px-80">
         <div className="brand-logo pointer" onClick={() => setPage('home')}>
-          <div className="mascot-square">
-            <img src={ASSETS.mascotHero} style={{ width: '60px' }}></img>
+          <div className="mascot-square-footer">
+            <img src={ASSETS.mascotHero} style={{ width: '60px', translate: '5px -4px'  }}></img>
           </div>
           <span className="brand-text">FARMARCIA</span>
         </div>
