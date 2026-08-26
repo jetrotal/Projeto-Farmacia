@@ -1,6 +1,6 @@
 // Bloco de variáveis para centralizar as imagens do projeto.
 export const ASSETS = {
-  mascotHero: "https://placehold.co/600x600/26B394/FFFFFF?text=Mascote+Farmarcia",
+  mascotHero: "../src/assets/logo_farmarcia.png",
   mascotWelcome: "https://placehold.co/170x170/26B394/FFFFFF?text=Logo",
   avatar1: "https://placehold.co/40x40/D7E4E5/0E3D55?text=JM",
   avatar2: "https://placehold.co/40x40/D7E4E5/0E3D55?text=CA",

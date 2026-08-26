@@ -92,8 +92,17 @@ body {
 .hero-title { font-size: 56px; font-weight: 800; line-height: 1.1; color: var(--c-dark); }
 .hero-subtitle { font-size: 20px; color: var(--c-gray); line-height: 1.6; }
 .hero-btn { border-radius: 32px; }
-.mascot-container { width: 480px; height: 480px; background: rgba(255,255,255,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-.mascot-img { width: 100%; border-radius: 50%; object-fit: cover;}
+.mascot-container {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mascot-img {
+    width: 65%;
+    object-fit: cover;
+    transform: scaleX(-1) translateY(20px);
+}
 
 /* Home - Benefits */
 .benefits { background: var(--c-dark); height: 112px; display: flex; align-items: center; justify-content: space-between; }
@@ -125,7 +134,7 @@ body {
 .favorite-btn { width: 32px; height: 32px; background: var(--c-light); border: none; border-radius: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center;}
 .product-img { width: 100%; height: 160px; background-size: cover; background-position: center; border-radius: 8px; }
 .product-info { display: flex; flex-direction: column; gap: 4px; flex-grow: 1; }
-.brand-text { color: var(--c-cyan); font-size: 11px; font-weight: 700; text-transform: uppercase; }
+.brand-text { color: var(--c-cyan); font-size: 21px; font-weight: 700; text-transform: uppercase; }
 .product-name { font-size: 14px; font-weight: 600; color: var(--c-dark); min-height: 38px;}
 .stars-row { display: flex; align-items: center; gap: 2px; }
 .reviews-count { font-size: 11px; color: var(--c-gray); margin-left: 4px;}

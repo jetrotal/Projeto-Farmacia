@@ -1,5 +1,7 @@
 import Icon from './Icon';
+
 import { mdiMagnify, mdiAccountOutline, mdiCartOutline, mdiPill } from '@mdi/js';
+import { ASSETS } from '../constants/assets';
 
 export default function Navbar({ setPage }) {
   return (
@@ -15,7 +17,7 @@ export default function Navbar({ setPage }) {
       <div className="main-nav px-80">
         <div className="brand-logo pointer" onClick={() => setPage('home')}>
           <div className="mascot-square">
-            <Icon path={mdiPill} size={1.5} color="#FFFFFF" />
+            <img src={ASSETS.mascotHero} style={{ width: '60px' }}></img>
           </div>
           <span className="brand-text">FARMARCIA</span>
         </div>
