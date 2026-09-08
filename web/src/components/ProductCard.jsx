@@ -1,13 +1,20 @@
 import Icon from './Icon';
-import { mdiHeartOutline, mdiStar, mdiCartOutline } from '@mdi/js';
+import { mdiHeartOutline, mdiHeart, mdiStar, mdiCartOutline } from '@mdi/js';
+import { useCart } from '../contexts/CartContext';
+import { useFavorites } from '../contexts/FavoritesContext';
 
 export default function ProductCard({ product }) {
+  const { addToCart } = useCart();
+  const { isFavorite, toggleFavorite } = useFavorites();
+  
+  const isFav = isFavorite(product.id);
+
   return (
     <div className="product-card">
       <div className="card-header">
         <div className="discount-tag">{product.discount}</div>
-        <button className="favorite-btn">
-          <Icon path={mdiHeartOutline} size={0.7} color="#D93D7B" />
+        <button className="favorite-btn" onClick={() => toggleFavorite(product)}>
+          <Icon path={isFav ? mdiHeart : mdiHeartOutline} size={0.7} color="#D93D7B" />
         </button>
       </div>
       
@@ -31,9 +38,9 @@ export default function ProductCard({ product }) {
         <span className="installment-plan">{product.installment}</span>
       </div>
 
-      <button className="btn-primary add-to-cart">
+      <button className="btn-primary add-to-cart" onClick={() => addToCart(product)}>
         <Icon path={mdiCartOutline} size={0.8} />
-        Adicionar ao carrinho
+        Adicionar
       </button>
     </div>
   );

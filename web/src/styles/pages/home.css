@@ -1,0 +1,39 @@
+/* Home - Hero */
+.hero { height: 500px; background: var(--c-light); display: flex; align-items: center; justify-content: space-between; overflow: hidden;}
+.hero-content { display: flex; flex-direction: column; gap: 24px; max-width: 640px; }
+.badge-offer { background: var(--c-pink); color: var(--c-white); padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; width: fit-content; }
+.hero-title { font-size: 56px; font-weight: 800; line-height: 1.1; color: var(--c-dark); }
+.hero-subtitle { font-size: 20px; color: var(--c-gray); line-height: 1.6; }
+.hero-btn { border-radius: 32px; }
+.mascot-container { border-radius: 50%; display: flex; align-items: center; justify-content: center;}
+.mascot-img { width: 65%; object-fit: cover; transform: scaleX(-1) translateY(20px);}
+
+/* Home - Benefits */
+.benefits { background: var(--c-dark); height: 112px; display: flex; align-items: center; justify-content: space-between; }
+.benefit-item { display: flex; align-items: center; gap: 16px; }
+.benefit-icon { width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 24px; display: flex; align-items: center; justify-content: center; }
+.benefit-title { color: var(--c-white); font-size: 14px; font-weight: 700; margin-bottom: 2px;}
+.benefit-subtitle { color: var(--c-light); font-size: 12px; }
+
+/* Categories */
+.categories-section { padding-top: 60px; padding-bottom: 60px; }
+.categories-strip { display: flex; gap: 16px; margin-top: 24px; overflow-x: auto; padding-bottom: 8px;}
+.category-pill { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 24px; background: var(--c-light); color: var(--c-dark); font-weight: 700; font-size: 14px; border: none; cursor: pointer; white-space: nowrap; transition: 0.2s ease;}
+.category-pill:hover { background: var(--c-cyan); color: var(--c-white); }
+.category-pill.active { background: var(--c-green); color: var(--c-white); }
+
+/* Featured */
+.featured-section { background: var(--c-light); padding-top: 60px; padding-bottom: 60px; }
+.featured-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+.products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+/* Testimonials */
+.testimonials { padding-top: 80px; padding-bottom: 80px; display: flex; flex-direction: column; align-items: center; gap: 40px; text-align: center;}
+.badge-pink { color: var(--c-pink); font-size: 12px; font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 4px; justify-content: center;}
+.testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; width: 100%; max-width: 1280px; }
+.testimonial-card { background: var(--c-light); border-radius: 24px; padding: 32px; box-shadow: 0 8px 24px rgba(14,61,85,0.08); display: flex; flex-direction: column; gap: 20px; text-align: left; }
+.testimonial-card p { font-size: 16px; color: var(--c-dark); line-height: 1.6; }
+.user-info { display: flex; align-items: center; gap: 12px; }
+.user-avatar { width: 40px; height: 40px; border-radius: 20px; }
+.user-info h4 { font-size: 14px; font-weight: 700; color: var(--c-dark); }
+.user-info span { font-size: 12px; color: var(--c-gray); }

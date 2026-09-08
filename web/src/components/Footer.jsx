@@ -1,9 +1,25 @@
+import { useState } from 'react';
 import Icon from './Icon';
-import { mdiInstagram, mdiFacebook, mdiYoutube, mdiPill } from '@mdi/js';
+import { mdiInstagram, mdiFacebook, mdiYoutube } from '@mdi/js';
 import { ASSETS } from '../constants/assets';
-
+import { ApiService } from '../services/api';
+import { useNavigation } from '../contexts/NavigationContext';
 
 export default function Footer() {
+  const { navigate } = useNavigation();
+  const [email, setEmail] = useState('');
+
+  const handleNewsletter = async () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailRegex.test(email)) {
+      alert('Por favor, informe um e-mail válido.');
+      return;
+    }
+    await ApiService.subscribeNewsletter(email);
+    alert('Obrigado! Você se inscreveu com sucesso.');
+    setEmail('');
+  };
+
   return (
     <footer className="footer pt-80">
       <div className="footer-grid px-80">
@@ -26,28 +42,34 @@ export default function Footer() {
 
         <div className="links-col">
           <h4 className="footer-title">Departamentos</h4>
-          <a>Medicamentos</a>
-          <a>Dermocosméticos</a>
-          <a>Vitaminas e Suplementos</a>
-          <a>Higiene Pessoal</a>
-          <a>Mamãe e Bebê</a>
+          <a onClick={() => navigate('catalog', { category: 'Medicamentos' })}>Medicamentos</a>
+          <a onClick={() => navigate('catalog', { category: 'Dermocosméticos' })}>Dermocosméticos</a>
+          <a onClick={() => navigate('catalog', { category: 'Vitaminas' })}>Vitaminas e Suplementos</a>
+          <a onClick={() => navigate('catalog', { category: 'Higiene Pessoal' })}>Higiene Pessoal</a>
+          <a onClick={() => navigate('departments')}>Todos os Departamentos</a>
         </div>
 
         <div className="links-col">
           <h4 className="footer-title">Atendimento</h4>
-          <a>Central de Ajuda</a>
-          <a>Como Comprar</a>
-          <a>Entregas e Prazos</a>
-          <a>Trocas e Devoluções</a>
-          <a>Trabalhe Conosco</a>
+          <a onClick={() => navigate('info', { title: 'Central de Ajuda' })}>Central de Ajuda</a>
+          <a onClick={() => navigate('info', { title: 'Como Comprar' })}>Como Comprar</a>
+          <a onClick={() => navigate('info', { title: 'Entregas e Prazos' })}>Entregas e Prazos</a>
+          <a onClick={() => navigate('info', { title: 'Trocas e Devoluções' })}>Trocas e Devoluções</a>
+          <a onClick={() => navigate('info', { title: 'Trabalhe Conosco' })}>Trabalhe Conosco</a>
         </div>
 
         <div className="newsletter-col">
           <h4 className="footer-title">Assine nossa Newsletter</h4>
           <p className="footer-desc">Receba ofertas exclusivas, cupons de desconto e dicas de saúde direto no seu e-mail.</p>
           <div className="newsletter-group">
-            <input type="email" placeholder="Seu melhor e-mail" className="newsletter-input" />
-            <button className="btn-primary">Enviar</button>
+            <input 
+              type="email" 
+              placeholder="Seu melhor e-mail" 
+              className="newsletter-input" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <button className="btn-primary" onClick={handleNewsletter}>Enviar</button>
           </div>
         </div>
       </div>

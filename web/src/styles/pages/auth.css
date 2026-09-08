@@ -1,0 +1,26 @@
+/* SignUp & Login Page */
+.page-signup { background: var(--c-light); padding: 80px 0; min-height: calc(100vh - 130px - 510px); display: flex; justify-content: center;}
+.registration-card { width: 1000px; background: var(--c-white); border-radius: 24px; box-shadow: 0 8px 24px rgba(14,61,85,0.08); display: flex; overflow: hidden;}
+.form-panel { flex: 1; padding: 56px; display: flex; flex-direction: column; gap: 32px; }
+.form-title { font-size: 28px; font-weight: 800; color: var(--c-dark); margin-bottom: 8px;}
+.form-subtitle { font-size: 14px; color: var(--c-gray); }
+.signup-form { display: flex; flex-direction: column; gap: 16px; }
+.input-group { display: flex; flex-direction: column; gap: 8px; flex: 1;}
+.input-group label { font-size: 13px; font-weight: 700; color: var(--c-dark); }
+.input-group input[type="text"], .input-group input[type="email"], .input-group input[type="password"] { background: var(--c-light); border: 1px solid transparent; padding: 12px 16px; border-radius: 12px; font-size: 14px; font-family: var(--font-main); outline: none; width: 100%; transition: 0.2s;}
+.input-group input:focus { border-color: var(--c-cyan); }
+.row-inputs { display: flex; gap: 16px; width: 100%;}
+.input-with-icon { position: relative; display: flex; align-items: center;}
+.input-with-icon input { padding-right: 40px !important; }
+.icon-wrapper { position: absolute; right: 16px; display: flex; align-items: center; justify-content: center; height: 100%; z-index: 10;}
+.form-actions { display: flex; flex-direction: column; gap: 16px; align-items: center; margin-top: 16px;}
+.login-link { font-size: 14px; color: var(--c-gray); display: flex; gap: 4px;}
+.brand-welcome-panel { width: 400px; background: var(--c-light); padding: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; border-left: 1px solid #E4EEEE;}
+.logo-circle { width: 200px; height: 200px; border: 3px solid #7BBDB9; border-radius: 100px; padding: 12px; background: var(--c-white); display: flex; align-items: center; justify-content: center;}
+.logo-circle img { width: 100%; object-fit: cover; scale: 1.2; translate: 15px -16px; }
+.welcome-text { text-align: center; }
+.welcome-text h2 { font-size: 22px; font-weight: 800; color: var(--c-dark); margin-bottom: 12px;}
+.welcome-text p { font-size: 14px; color: var(--c-gray); line-height: 1.5;}
+.welcome-benefits { display: flex; gap: 16px; justify-content: center;}
+.welcome-benefit-item { display: flex; flex-direction: column; align-items: center; gap: 4px;}
+.welcome-benefit-item span { font-size: 11px; font-weight: 700; color: var(--c-dark);}
