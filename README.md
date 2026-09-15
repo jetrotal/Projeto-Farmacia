@@ -1,8 +1,8 @@
 # Projeto FARMARCIA - Sistema Integrado de Gestão e Atendimento
 
-**Disciplina:** [Nome da Disciplina - Preencher aqui]  
-**Professor:** [Nome do Professor - Preencher aqui]  
-**Integrantes:** Mauro Luiz dos Santos Junior, Marco Machado, Vitor Aletto  
+**Disciplina:** Programacao para Dispositivos Moveis II-A914-N-D.S.M.-113-20262 
+**Professor:** BRUNO ZOLOTAREFF DOS SANTOS
+**Integrantes:** Mauro Junior, Marco Machado, Vitor Aletto  
 
 ## 💻 Sobre o Projeto
 O sistema **Farmarcia** não é apenas um CRUD tradicional, mas sim o coração da operação de uma farmácia focada na terceira idade (localizada na Liberdade/SP). O ecossistema visa unir a acessibilidade física a uma tecnologia de ponta, facilitando o trabalho do farmacêutico e a vida do paciente.
