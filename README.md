@@ -1,7 +1,7 @@
 # Projeto FARMARCIA - Sistema Integrado de Gestão e Atendimento
 
-**Disciplina:** Programacao para Dispositivos Moveis II-A914-N-D.S.M.-113-20262 
-**Professor:** BRUNO ZOLOTAREFF DOS SANTOS
+**Disciplina:** Programacao para Dispositivos Moveis II-A914-N-D.S.M.-113-20262 <br>
+**Professor:** BRUNO ZOLOTAREFF DOS SANTOS <br>
 **Integrantes:** Mauro Junior, Marco Machado, Vitor Aletto  
 
 ## 💻 Sobre o Projeto
