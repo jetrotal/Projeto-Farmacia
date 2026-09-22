@@ -1,6 +1,5 @@
 import { ASSETS } from '../constants/assets';
 
-// ... (Mantenha MOCK_PRODUCTS, MOCK_CATEGORIES, MOCK_BRANDS, MOCK_TESTIMONIALS iguais) ...
 const MOCK_PRODUCTS = [
   { id: 1, image: ASSETS.prodLaRoche, discount: '-20% OFF', brand: 'La Roche-Posay', name: 'Anthelios FPS 60', rating: 4, reviews: 42, oldPrice: 'R$ 89,90', price: 'R$ 71,90', priceValue: 71.90, installment: '2x de R$ 35,95', category: 'Dermocosméticos' },
   { id: 2, image: ASSETS.prodDipirona, discount: '-65% OFF', brand: 'EMS Genéricos', name: 'Dipirona 500mg 10 comprimidos', rating: 5, reviews: 128, oldPrice: 'R$ 10,90', price: 'R$ 3,80', priceValue: 3.80, installment: '1x de R$ 3,80', category: 'Medicamentos' },
@@ -45,6 +44,10 @@ export const ApiService = {
     
     if (filters.categories && filters.categories.length > 0) {
       products = products.filter(p => filters.categories.includes(p.category));
+    }
+
+    if (filters.brands && filters.brands.length > 0) {
+      products = products.filter(p => filters.brands.includes(p.brand));
     }
     
     if (filters.search) {

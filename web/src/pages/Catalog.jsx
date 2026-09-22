@@ -14,6 +14,7 @@ export default function Catalog() {
   const search = route.params?.search || '';
   
   const [selectedCategories, setSelectedCategories] = useState(initialCategory ? [initialCategory] : []);
+  const [selectedBrands, setSelectedBrands] = useState([]);
   const [sortBy, setSortBy] = useState('sales');
 
   useEffect(() => {
@@ -29,18 +30,25 @@ export default function Catalog() {
     }
   }, [route.params?.category]);
 
-  // Agora reage também à mudança de Ordenação (sortBy)
+  // Agora reage também à mudança de Ordenação e Marcas
   useEffect(() => {
     ApiService.getCatalogProducts({ 
       categories: selectedCategories, 
+      brands: selectedBrands,
       search: search,
       sortBy: sortBy
     }).then(setCatalogProducts);
-  }, [selectedCategories, search, sortBy]);
+  }, [selectedCategories, selectedBrands, search, sortBy]);
 
   const toggleCategory = (cat) => {
     setSelectedCategories(prev => 
       prev.includes(cat) ? prev.filter(c => c !== cat) : [...prev, cat]
+    );
+  };
+
+  const toggleBrand = (brand) => {
+    setSelectedBrands(prev => 
+      prev.includes(brand) ? prev.filter(b => b !== brand) : [...prev, brand]
     );
   };
 
@@ -93,7 +101,11 @@ export default function Catalog() {
             <h4 className="filter-group-title">Marca</h4>
             {dbBrands.map(brand => (
               <label key={brand} className="custom-check">
-                <input type="checkbox" /> {brand}
+                <input 
+                  type="checkbox" 
+                  checked={selectedBrands.includes(brand)}
+                  onChange={() => toggleBrand(brand)}
+                /> {brand}
               </label>
             ))}
           </div>
