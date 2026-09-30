@@ -22,3 +22,38 @@
 .department-card:hover { transform: translateY(-4px); background: var(--c-white); border-color: var(--c-cyan); box-shadow: 0 8px 24px rgba(14,61,85,0.08); }
 .department-icon { width: 64px; height: 64px; background: rgba(255,255,255,0.5); border-radius: 32px; display: flex; align-items: center; justify-content: center; }
 .department-card h3 { color: var(--c-dark); font-size: 16px; font-weight: 700; }
+
+@media (max-width: 768px) {
+  .main-grid-container {
+    flex-direction: column;
+  }
+  .filter-sidebar {
+    width: 100%;
+    display: none;
+  }
+  .filter-sidebar.open {
+    display: flex;
+  }
+  .catalog-title-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .catalog-actions-mobile {
+    max-width: 100% !important;
+  }
+  .sort-dropdown {
+    width: 100%;
+  }
+  .products-grid-catalog {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .departments-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .products-grid-catalog {
+    grid-template-columns: 1fr !important;
+  }
+}

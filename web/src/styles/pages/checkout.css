@@ -19,3 +19,22 @@
 .payment-card.selected { border-color: var(--c-green); background: #EFFFFC; }
 .pay-radio { display: flex; align-items: center; gap: 12px; font-weight: 700; color: var(--c-dark); }
 .pay-radio input[type="radio"] { width: 20px; height: 20px; cursor: pointer; accent-color: var(--c-green); }
+
+@media (max-width: 768px) {
+  .checkout-container {
+    flex-direction: column;
+  }
+  .checkout-main-panel, .checkout-sidebar {
+    width: 100%;
+  }
+  .checkout-sidebar {
+    position: static;
+    padding: 24px 16px;
+  }
+  .checkout-step {
+    padding: 24px 16px;
+  }
+  .row-inputs {
+    flex-direction: column;
+  }
+}

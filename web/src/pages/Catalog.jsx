@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import Breadcrumbs from '../components/Breadcrumbs';
+import Icon from '../components/Icon';
+import { mdiFilterVariant } from '@mdi/js';
 import { ApiService } from '../services/api';
 import { useNavigation } from '../contexts/NavigationContext';
 
@@ -16,6 +18,8 @@ export default function Catalog() {
   const [selectedCategories, setSelectedCategories] = useState(initialCategory ? [initialCategory] : []);
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [sortBy, setSortBy] = useState('sales');
+  
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   useEffect(() => {
     ApiService.getCategories().then(setDbCategories);
@@ -66,20 +70,26 @@ export default function Catalog() {
           <p className="section-subtitle">Exibindo {catalogProducts.length} produtos encontrados</p>
         </div>
         
-        <select 
-          className="sort-dropdown" 
-          value={sortBy} 
-          onChange={(e) => setSortBy(e.target.value)}
-        >
-          <option value="sales">Ordenar por: Mais Vendidos</option>
-          <option value="price-asc">Menor Preço</option>
-          <option value="price-desc">Maior Preço</option>
-          <option value="rating">Melhor Avaliação</option>
-        </select>
+        <div style={{ display: 'flex', gap: '8px', width: '100%', maxWidth: 'max-content' }} className="catalog-actions-mobile">
+          <button className="btn-outline desktop-hidden" style={{ padding: '10px 16px' }} onClick={() => setIsFilterOpen(!isFilterOpen)}>
+            <Icon path={mdiFilterVariant} size={0.8} /> Filtros
+          </button>
+          
+          <select 
+            className="sort-dropdown" 
+            value={sortBy} 
+            onChange={(e) => setSortBy(e.target.value)}
+          >
+            <option value="sales">Ordenar por: Mais Vendidos</option>
+            <option value="price-asc">Menor Preço</option>
+            <option value="price-desc">Maior Preço</option>
+            <option value="rating">Melhor Avaliação</option>
+          </select>
+        </div>
       </div>
 
       <div className="main-grid-container px-80">
-        <aside className="filter-sidebar">
+        <aside className={`filter-sidebar ${isFilterOpen ? 'open' : ''}`}>
           <h3 className="filter-title">Filtros</h3>
           
           <div className="filter-group">

@@ -24,3 +24,23 @@
 .welcome-benefits { display: flex; gap: 16px; justify-content: center;}
 .welcome-benefit-item { display: flex; flex-direction: column; align-items: center; gap: 4px;}
 .welcome-benefit-item span { font-size: 11px; font-weight: 700; color: var(--c-dark);}
+
+@media (max-width: 768px) {
+  .page-signup {
+    padding: 40px 16px;
+  }
+  .registration-card {
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+  }
+  .form-panel {
+    padding: 24px;
+  }
+  .brand-welcome-panel {
+    display: none;
+  }
+  .row-inputs {
+    flex-direction: column;
+  }
+}

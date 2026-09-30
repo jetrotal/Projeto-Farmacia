@@ -22,3 +22,13 @@ body {
 .text-green { color: var(--c-green) !important; }
 .link-cyan { color: var(--c-cyan); font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 4px; transition: color 0.2s; }
 .link-cyan:hover { color: var(--c-dark); }
+
+@media (max-width: 768px) {
+  .px-80 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .pt-80 {
+    padding-top: 40px;
+  }
+}
