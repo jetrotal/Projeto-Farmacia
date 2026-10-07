@@ -1,16 +1,17 @@
+# Compiled output
+dist
+out-tsc
+build
+
+# Node modules
+node_modules
+
 # Logs
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
 
 # Variáveis de ambiente
 .env
@@ -19,14 +20,22 @@ dist-ssr
 .env.test.local
 .env.production.local
 
+# Database (NÃO COMITAR O SQLITE)
+*.sqlite
+*.sqlite-journal
+*.sqlite3
+*.db
+*.db3
+
 # Testes
 coverage
 
-# Editor directories and files
+# OS/Editor files
+.DS_Store
+Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
