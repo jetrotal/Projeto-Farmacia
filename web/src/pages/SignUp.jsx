@@ -3,6 +3,7 @@ import Icon from '../components/Icon';
 import { mdiEyeOutline, mdiEyeOffOutline, mdiShieldOutline, mdiTruckOutline, mdiHeartOutline } from '@mdi/js';
 import { ASSETS } from '../constants/assets';
 import { useNavigation } from '../contexts/NavigationContext';
+import { ApiService } from '../services/api';
 
 export default function SignUp() {
   const { navigate } = useNavigation();
@@ -10,6 +11,7 @@ export default function SignUp() {
   const [form, setForm] = useState({ name: '', email: '', cpf: '', phone: '', password: '', confirm: '', terms: false });
   const [showPwd, setShowPwd] = useState(false);
   const [errors, setErrors] = useState({});
+  const [apiError, setApiError] = useState('');
 
   const validate = () => {
     const newErrs = {};
@@ -27,11 +29,23 @@ export default function SignUp() {
     return Object.keys(newErrs).length === 0;
   };
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
+    setApiError('');
     if (validate()) {
-      alert('Cadastro realizado com sucesso!');
-      navigate('home');
+      try {
+        await ApiService.register({
+          name: form.name,
+          email: form.email,
+          cpf: form.cpf,
+          phone: form.phone,
+          password: form.password
+        });
+        alert('Cadastro realizado com sucesso!');
+        navigate('login');
+      } catch (error) {
+        setApiError(error.message);
+      }
     }
   };
 
@@ -47,6 +61,8 @@ export default function SignUp() {
             </div>
 
             <form className="signup-form" onSubmit={handleRegister}>
+              {apiError && <div className="error-text" style={{ padding: '12px', background: '#fff1f4', border: '1px solid var(--c-pink)', borderRadius: '8px', textAlign: 'center' }}>{apiError}</div>}
+
               <div className="input-group">
                 <label>Nome completo</label>
                 <input type="text" placeholder="Ex: Dra. Márcia Souza" value={form.name} onChange={e => setForm({...form, name: e.target.value})} className={errors.name ? 'input-error' : ''}/>

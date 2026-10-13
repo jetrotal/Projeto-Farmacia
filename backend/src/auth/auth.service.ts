@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable, UnauthorizedException, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
@@ -26,5 +26,24 @@ export class AuthService {
     }
 
     throw new UnauthorizedException('E-mail ou senha incorretos');
+  }
+
+  async register(userData: any) {
+    const existingUser = await this.userRepo.findOne({ where: { email: userData.email } });
+    if (existingUser) {
+      throw new BadRequestException('Este e-mail já está em uso.');
+    }
+
+    const newUser = this.userRepo.create({
+      name: userData.name,
+      email: userData.email,
+      password: userData.password,
+      cpf: userData.cpf,
+      phone: userData.phone,
+      role: 'CUSTOMER',
+    });
+
+    await this.userRepo.save(newUser);
+    return { success: true, message: 'Cadastro realizado com sucesso' };
   }
 }

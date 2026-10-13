@@ -15,6 +15,19 @@ export const ApiService = {
     return res.json();
   },
 
+  register: async (userData) => {
+    const res = await fetch(`${API_URL}/auth/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(userData)
+    });
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || 'Erro ao realizar cadastro');
+    }
+    return res.json();
+  },
+
   getFeaturedProducts: async () => {
     return (await fetch(`${API_URL}/products/featured`)).json();
   },

@@ -16,4 +16,10 @@ export class User {
 
   @Column()
   role: string;
+
+  @Column({ nullable: true })
+  cpf: string;
+
+  @Column({ nullable: true })
+  phone: string;
 }
