@@ -14,6 +14,6 @@ export class Testimonial {
   @Column()
   subtitle: string;
 
-  @Column()
+  @Column('text')
   avatar: string;
 }

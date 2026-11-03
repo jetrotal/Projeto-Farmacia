@@ -13,7 +13,9 @@ export default function BenefitsSection() {
     <section className="benefits px-80">
       {BENEFITS.map((benefit, idx) => (
         <div key={idx} className="benefit-item">
-          <div className="benefit-icon"><Icon path={benefit.icon} size={1} color="#26B394" /></div>
+          <div className="benefit-icon">
+            <Icon path={benefit.icon} size={1} color="#26B394" />
+          </div>
           <div>
             <h4 className="benefit-title">{benefit.title}</h4>
             <p className="benefit-subtitle">{benefit.subtitle}</p>

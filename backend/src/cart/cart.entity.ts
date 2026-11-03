@@ -9,9 +9,30 @@ export class CartItem {
   @Column()
   cartId: string;
 
-  @Column()
+  @Column('int', { nullable: true })
+  userId: number;
+
+  @Column('int')
   qty: number;
 
-  @ManyToOne(() => Product, { eager: true })
+  @Column({ default: () => 'CURRENT_TIMESTAMP' })
+  updatedAt: string;
+
+  @Column({ default: false })
+  abandonedNotified: boolean;
+
+  @ManyToOne(() => Product, { eager: true, onDelete: 'CASCADE' })
+  product: Product;
+}
+
+@Entity()
+export class Favorite {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column('int')
+  userId: number;
+
+  @ManyToOne(() => Product, { eager: true, onDelete: 'CASCADE' })
   product: Product;
 }

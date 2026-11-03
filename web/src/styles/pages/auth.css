@@ -7,8 +7,8 @@
 .signup-form { display: flex; flex-direction: column; gap: 16px; }
 .input-group { display: flex; flex-direction: column; gap: 8px; flex: 1;}
 .input-group label { font-size: 13px; font-weight: 700; color: var(--c-dark); }
-.input-group input[type="text"], .input-group input[type="email"], .input-group input[type="password"] { background: var(--c-light); border: 1px solid transparent; padding: 12px 16px; border-radius: 12px; font-size: 14px; font-family: var(--font-main); outline: none; width: 100%; transition: 0.2s;}
-.input-group input:focus { border-color: var(--c-cyan); }
+.input-group input[type="text"], .input-group input[type="email"], .input-group input[type="password"], .input-group input[type="number"], .input-group input[type="date"] { background: var(--c-light); border: 1px solid transparent; padding: 12px 16px; border-radius: 12px; font-size: 14px; font-family: var(--font-main); outline: none; width: 100%; transition: 0.2s;}
+.input-group input:focus { border-color: var(--c-cyan); background: #fff; }
 .row-inputs { display: flex; gap: 16px; width: 100%;}
 .input-with-icon { position: relative; display: flex; align-items: center;}
 .input-with-icon input { padding-right: 40px !important; }
@@ -16,8 +16,8 @@
 .form-actions { display: flex; flex-direction: column; gap: 16px; align-items: center; margin-top: 16px;}
 .login-link { font-size: 14px; color: var(--c-gray); display: flex; gap: 4px;}
 .brand-welcome-panel { width: 400px; background: var(--c-light); padding: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; border-left: 1px solid #E4EEEE;}
-.logo-circle { width: 200px; height: 200px; border: 3px solid #7BBDB9; border-radius: 100px; padding: 12px; background: var(--c-white); display: flex; align-items: center; justify-content: center;}
-.logo-circle img { width: 100%; object-fit: cover; scale: 1.2; translate: 15px -16px; }
+.logo-circle { width: 200px; height: 200px; border: 3px solid #7BBDB9; border-radius: 100px; padding: 12px; background: var(--c-white); display: flex; align-items: center; justify-content: center; overflow: hidden;}
+.logo-circle img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .welcome-text { text-align: center; }
 .welcome-text h2 { font-size: 22px; font-weight: 800; color: var(--c-dark); margin-bottom: 12px;}
 .welcome-text p { font-size: 14px; color: var(--c-gray); line-height: 1.5;}
@@ -26,21 +26,9 @@
 .welcome-benefit-item span { font-size: 11px; font-weight: 700; color: var(--c-dark);}
 
 @media (max-width: 768px) {
-  .page-signup {
-    padding: 40px 16px;
-  }
-  .registration-card {
-    flex-direction: column;
-    max-width: 100%;
-    width: 100%;
-  }
-  .form-panel {
-    padding: 24px;
-  }
-  .brand-welcome-panel {
-    display: none;
-  }
-  .row-inputs {
-    flex-direction: column;
-  }
+  .page-signup { padding: 40px 16px; }
+  .registration-card { flex-direction: column; max-width: 100%; width: 100%; }
+  .form-panel { padding: 24px; }
+  .brand-welcome-panel { display: none; }
+  .row-inputs { flex-direction: column; }
 }

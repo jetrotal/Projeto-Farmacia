@@ -12,7 +12,7 @@ body {
 
 /* Utilities */
 .pointer { cursor: pointer; transition: opacity 0.2s; }
-.pointer:hover { opacity: 0.8; }
+.pointer:hover { opacity: 0.85; }
 .px-80 { padding-left: 80px; padding-right: 80px; }
 .pt-80 { padding-top: 80px; }
 .w-full { width: 100%; }

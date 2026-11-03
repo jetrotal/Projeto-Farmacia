@@ -12,8 +12,8 @@ export default function Breadcrumbs({ items }) {
           const isLast = index === items.length - 1;
           return (
             <span key={index} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span 
-                className={isLast ? "active" : "pointer"} 
+              <span
+                className={isLast ? 'active' : 'pointer'}
                 onClick={() => !isLast && navigate(item.page, item.params || {})}
               >
                 {item.label}

@@ -14,27 +14,16 @@
 .form-grid .input-group input:focus { border-color: var(--c-cyan); }
 
 .payment-options { display: flex; flex-direction: column; gap: 16px; }
-.payment-card { border: 2px solid var(--c-light); border-radius: 16px; padding: 20px; cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 16px; }
+.payment-card { border: 2px solid var(--c-light); border-radius: 16px; padding: 20px; cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 16px; background: #fff; }
 .payment-card:hover { border-color: var(--c-cyan); background: #F5F8F9; }
 .payment-card.selected { border-color: var(--c-green); background: #EFFFFC; }
 .pay-radio { display: flex; align-items: center; gap: 12px; font-weight: 700; color: var(--c-dark); }
 .pay-radio input[type="radio"] { width: 20px; height: 20px; cursor: pointer; accent-color: var(--c-green); }
 
 @media (max-width: 768px) {
-  .checkout-container {
-    flex-direction: column;
-  }
-  .checkout-main-panel, .checkout-sidebar {
-    width: 100%;
-  }
-  .checkout-sidebar {
-    position: static;
-    padding: 24px 16px;
-  }
-  .checkout-step {
-    padding: 24px 16px;
-  }
-  .row-inputs {
-    flex-direction: column;
-  }
+  .checkout-container { flex-direction: column; }
+  .checkout-main-panel, .checkout-sidebar { width: 100%; }
+  .checkout-sidebar { position: static; padding: 24px 16px; }
+  .checkout-step { padding: 24px 16px; }
+  .row-inputs { flex-direction: column; }
 }

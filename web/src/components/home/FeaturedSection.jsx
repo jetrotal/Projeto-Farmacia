@@ -10,7 +10,9 @@ export default function FeaturedSection() {
   const [featuredProducts, setFeaturedProducts] = useState([]);
 
   useEffect(() => {
-    ApiService.getFeaturedProducts().then(setFeaturedProducts);
+    ApiService.getFeaturedProducts()
+      .then((data) => setFeaturedProducts(Array.isArray(data) ? data : []))
+      .catch(() => {});
   }, []);
 
   return (
@@ -18,13 +20,17 @@ export default function FeaturedSection() {
       <div className="featured-header">
         <div>
           <h2 className="section-title">Ofertas em Destaque</h2>
-          <p className="section-subtitle">Os melhores preços da semana selecionados especialmente para você</p>
+          <p className="section-subtitle">
+            Os melhores preços da semana selecionados especialmente para você
+          </p>
         </div>
-        <a className="link-cyan pointer" onClick={() => navigate('catalog')}>Ver todo o catálogo <Icon path={mdiArrowRight} size={0.7}/></a>
+        <a className="link-cyan pointer" onClick={() => navigate('catalog')}>
+          Ver todo o catálogo <Icon path={mdiArrowRight} size={0.7} />
+        </a>
       </div>
       <div className="products-grid">
-        {featuredProducts.map((product, idx) => (
-          <ProductCard key={idx} product={product} />
+        {featuredProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </section>

@@ -1,17 +1,56 @@
+import { useEffect, useState } from 'react';
 import { useNavigation } from '../contexts/NavigationContext';
+import { ApiService } from '../services/api';
 
 export default function Info() {
-  const { route } = useNavigation();
-  const title = route.params?.title || 'Página de Informação';
+  const { route, navigate } = useNavigation();
+  const title = route.params?.title || 'Central de Ajuda';
+  const [pageData, setPageData] = useState(null);
+  const [allPages, setAllPages] = useState([]);
+
+  useEffect(() => {
+    ApiService.getPageByTitle(title)
+      .then(setPageData)
+      .catch(() => {
+        setPageData({
+          title,
+          content: `Conteúdo institucional de ${title}.`,
+        });
+      });
+
+    ApiService.getPages()
+      .then((list) => setAllPages(Array.isArray(list) ? list : []))
+      .catch(() => {});
+  }, [title]);
 
   return (
     <div className="page-info">
       <div className="info-card">
-        <h1 className="info-title">{title}</h1>
-        <div className="info-content">
-          <p>Esta é uma página de conteúdo dinâmico para a seção de <strong>{title}</strong>.</p>
-          <br/>
-          <p>No futuro, este conteúdo será administrado e buscado diretamente do nosso banco de dados (CMS), garantindo flexibilidade para editarmos nossas políticas, informações de ajuda e outras respostas frequentemente perguntadas.</p>
+        <div
+          style={{
+            display: 'flex',
+            gap: '8px',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            marginBottom: '24px',
+          }}
+        >
+          {allPages.map((p) => (
+            <button
+              key={p.id || p.slug}
+              type="button"
+              className={`category-pill ${p.title === title ? 'active' : ''}`}
+              style={{ padding: '8px 16px', fontSize: '12px' }}
+              onClick={() => navigate('info', { title: p.title })}
+            >
+              {p.title}
+            </button>
+          ))}
+        </div>
+
+        <h1 className="info-title">{pageData?.title || title}</h1>
+        <div className="info-content" style={{ whiteSpace: 'pre-line' }}>
+          {pageData ? pageData.content : 'Carregando conteúdo do CMS...'}
         </div>
       </div>
     </div>
