@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "FARMARCIA",
+    "slug": "farmarcia-native",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#0E3D55",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0E3D55"
+      }
+    }
+  }
+}
