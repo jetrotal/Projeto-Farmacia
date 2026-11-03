@@ -1,0 +1,34 @@
+# Dependências do Node
+node_modules/
+npm-debug.*
+yarn-error.log
+yarn-debug.log
+
+# Pastas geradas pelo Expo
+.expo/
+dist/
+web-build/
+
+# Pastas nativas (caso você decida fazer o "eject" ou "prebuild" no futuro)
+android/
+ios/
+
+# Arquivos de ambiente (senhas, chaves de API, etc.)
+.env
+.env.*
+!.env.example
+
+# Arquivos temporários do macOS e Windows
+.DS_Store
+Thumbs.db
+
+# Certificados de segurança (se for assinar o app localmente no futuro)
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Arquivos de cache do Metro Bundler e Watchman
+.watchmanconfig
+.metro-health-check*
