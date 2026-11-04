@@ -1,8 +1,10 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// IMPORTANTE: Coloque aqui a URL pública gerada pelo Codespaces para a porta 3000!
-// Exemplo: 'https://sua-url-3000.app.github.dev' (sem a barra final)
-export const API_URL = 'COLOQUE_AQUI_SUA_URL_DA_PORTA_3000';
+// MANTENHA a URL do seu backend aqui
+export const API_URL = 'https://symmetrical-xylophone-xv9vwxr6x5qc9vqp-3000.app.github.dev';
+
+// ADICIONE a URL do seu frontend (Vite) aqui! (Sem barra no final)
+export const WEB_URL = 'https://symmetrical-xylophone-xv9vwxr6x5qc9vqp-5173.app.github.dev';
 
 const getHeaders = async () => {
   const headers = { 'Content-Type': 'application/json' };

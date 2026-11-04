@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity, Alert } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useCart } from '../contexts/CartContext';
-import { API_URL } from '../services/api';
+import { WEB_URL } from '../services/api';
 
 export default function CartScreen({ navigation }) {
   const { cartItems, removeFromCart } = useCart();
@@ -13,7 +13,8 @@ export default function CartScreen({ navigation }) {
   };
 
   const renderItem = ({ item }) => {
-    const imageUrl = item.image.startsWith('http') ? item.image : `${API_URL}${item.image}`;
+    // Utilizando a WEB_URL
+    const imageUrl = item.image.startsWith('http') ? item.image : `${WEB_URL}${item.image}`;
     return (
       <View style={styles.cartItem}>
         <Image source={{ uri: imageUrl }} style={styles.image} resizeMode="contain" />

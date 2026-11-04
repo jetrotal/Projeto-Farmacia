@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { ApiService, API_URL } from '../services/api';
+import { ApiService, WEB_URL } from '../services/api';
 import { useCart } from '../contexts/CartContext';
 
 export default function ProductDetailScreen({ route, navigation }) {
@@ -16,7 +16,8 @@ export default function ProductDetailScreen({ route, navigation }) {
   if (!product) return <ActivityIndicator size="large" color="#26B394" style={{ marginTop: 50 }} />;
 
   const isOutOfStock = product.stock <= 0;
-  const imageUrl = product.image.startsWith('http') ? product.image : `${API_URL}${product.image}`;
+  // Utilizando a WEB_URL
+  const imageUrl = product.image.startsWith('http') ? product.image : `${WEB_URL}${product.image}`;
 
   return (
     <ScrollView style={styles.container}>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { API_URL } from '../services/api';
+import { WEB_URL } from '../services/api';
 
 export default function ProductCard({ product, onPress, onAddCart }) {
   const isOutOfStock = product.stock <= 0;
-  // Resolve o caminho da imagem relativo do backend para URL absoluta
-  const imageUrl = product.image.startsWith('http') ? product.image : `${API_URL}${product.image}`;
+  // Agora buscamos a imagem da URL Web em vez da URL da API
+  const imageUrl = product.image.startsWith('http') ? product.image : `${WEB_URL}${product.image}`;
 
   return (
     <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.8}>
