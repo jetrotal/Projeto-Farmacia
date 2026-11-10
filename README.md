@@ -20,6 +20,11 @@ A base tecnológica (Backend) será construída em **Node.js** com banco de dado
 - [x] Prototipagem Inicial (Figma)
 - [x] Configuração e Navegação do Front-End React (Navegação base 100% funcional)
 
+## 🚀 Status de Execução (Sprint II)
+- [x] [WEB] CSS para design responsívo
+- [x] [BACKEND] MIGRAÇÃO, CRUDS DE COMPRA E CRUDS DE ADMIN
+- [x] [MOBILE] VERSÃO MVP SOB Expo Go
+
 ## 🛠️ Como rodar o projeto Web
 1. Acesse o diretório `/web`
 2. Instale as dependências: `npm install`
